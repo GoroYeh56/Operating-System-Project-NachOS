@@ -1,0 +1,182 @@
+rm -f -f *.o *.ii
+rm -f -f *.coff
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c FS_test1.c
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -mips2 -c start.S
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o FS_test1.o -o FS_test1.coff
+../../coff2noff/coff2noff.x86Linux FS_test1.coff FS_test1
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x2f0
+	".rdata", filepos 0x3e0, mempos 0x2f0, size 0x90
+	".data", filepos 0x470, mempos 0x380, size 0x0
+	".bss", filepos 0x0, mempos 0x380, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c FS_test2.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o FS_test2.o -o FS_test2.coff
+../../coff2noff/coff2noff.x86Linux FS_test2.coff FS_test2
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x300
+	".rdata", filepos 0x3f0, mempos 0x300, size 0xa0
+	".data", filepos 0x490, mempos 0x3a0, size 0x0
+	".bss", filepos 0x0, mempos 0x3a0, size 0x0
+Formatting FS: allocating freemap dataSectors... 
+dataSector[0] takes sector 2
+Formatting FS: allocating 'root directory' dataSectors... 
+dataSector[0] takes sector 3
+dataSector[1] takes sector 4
+dataSector[2] takes sector 5
+dataSector[3] takes sector 6
+dataSector[4] takes sector 7
+dataSector[5] takes sector 8
+dataSector[6] takes sector 9
+dataSector[7] takes sector 10
+dataSector[8] takes sector 11
+dataSector[9] takes sector 12
+dataSector[0] takes sector 14
+dataSector[1] takes sector 15
+dataSector[2] takes sector 16
+dataSector[3] takes sector 17
+dataSector[4] takes sector 18
+dataSector[5] takes sector 19
+dataSector[6] takes sector 20
+dataSector[7] takes sector 21
+/FS_test1
+dataSector[0] takes sector 23
+Create file result is 1
+Open file result is 154257040
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Open file: /file1 and print out its content.
+I/O transfer from disk to CPU buffer.
+Contents in file: 
+abcdefghijklmnopqrstuvwxyz
+dataSector[0] takes sector 25
+dataSector[1] takes sector 26
+dataSector[2] takes sector 27
+dataSector[3] takes sector 28
+dataSector[4] takes sector 29
+dataSector[5] takes sector 30
+dataSector[6] takes sector 31
+dataSector[7] takes sector 32
+/FS_test2
+Open file result is 134710928
+Create file result is 27
+Create file result is 1
+Passed! ^_^
+rm -f -f *.o *.ii
+rm -f -f *.coff
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c FS_test1.c
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -mips2 -c start.S
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o FS_test1.o -o FS_test1.coff
+../../coff2noff/coff2noff.x86Linux FS_test1.coff FS_test1
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x2f0
+	".rdata", filepos 0x3e0, mempos 0x2f0, size 0x90
+	".data", filepos 0x470, mempos 0x380, size 0x0
+	".bss", filepos 0x0, mempos 0x380, size 0x0
+../../usr/local/nachos/bin/decstation-ultrix-gcc -G 0 -c -I../userprog -I../lib -B/usr/bin/local/nachos/lib/gcc-lib/decstation-ultrix/2.95.2/ -B/usr/bin/local/nachos/decstation-ultrix/bin/ -c FS_test2.c
+../../usr/local/nachos/bin/decstation-ultrix-ld -T script -N start.o FS_test2.o -o FS_test2.coff
+../../coff2noff/coff2noff.x86Linux FS_test2.coff FS_test2
+numsections 4 
+Loading 4 sections:
+	".text", filepos 0xf0, mempos 0x0, size 0x300
+	".rdata", filepos 0x3f0, mempos 0x300, size 0xa0
+	".data", filepos 0x490, mempos 0x3a0, size 0x0
+	".bss", filepos 0x0, mempos 0x3a0, size 0x0
+Formatting FS: allocating freemap dataSectors... 
+dataSector[0] takes sector 2
+Formatting FS: allocating 'root directory' dataSectors... 
+dataSector[0] takes sector 3
+dataSector[1] takes sector 4
+dataSector[2] takes sector 5
+dataSector[3] takes sector 6
+dataSector[4] takes sector 7
+dataSector[5] takes sector 8
+dataSector[6] takes sector 9
+dataSector[7] takes sector 10
+dataSector[8] takes sector 11
+dataSector[9] takes sector 12
+dataSector[0] takes sector 14
+dataSector[1] takes sector 15
+dataSector[2] takes sector 16
+dataSector[3] takes sector 17
+dataSector[4] takes sector 18
+dataSector[5] takes sector 19
+dataSector[6] takes sector 20
+dataSector[7] takes sector 21
+/FS_test1
+dataSector[0] takes sector 23
+Create file result is 1
+Open file result is 155387536
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Create file result is 1
+Open file: /file1 and print out its content.
+I/O transfer from disk to CPU buffer.
+Contents in file: 
+abcdefghijklmnopqrstuvwxyz
+dataSector[0] takes sector 25
+dataSector[1] takes sector 26
+dataSector[2] takes sector 27
+dataSector[3] takes sector 28
+dataSector[4] takes sector 29
+dataSector[5] takes sector 30
+dataSector[6] takes sector 31
+dataSector[7] takes sector 32
+/FS_test2
+Open file result is 167061136
+Create file result is 27
+Create file result is 1
+Passed! ^_^

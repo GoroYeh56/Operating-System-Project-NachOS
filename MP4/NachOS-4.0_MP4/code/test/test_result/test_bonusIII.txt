@@ -1,0 +1,220 @@
+=========== Testing FS_bonusIII.sh... ===========
+
+
+----------- Formatting disk... ------------
+
+Formatting FS: allocating freemap dataSectors... 
+Formatting FS: allocating 'root directory' dataSectors... 
+
+----------- Mkdir /t0------------
+
+Allocating file header for [dir] file: t0, FCB is at sector 13
+
+----------- Mkdir /t1 ------------
+
+Allocating file header for [dir] file: t1, FCB is at sector 24
+
+----------- Mkdir /t2 ------------
+
+Allocating file header for [dir] file: t2, FCB is at sector 35
+
+----------- List root dir ------------
+
+[D] t0
+[D] t1
+[D] t2
+
+----------- Test copy file ------------
+
+\------------ Copy file num_100.txt to nachOS FS /t0/f1: ------------
+
+Copy file num_100.txt to nachOS FS /t0/f1: 
+
+Existed dir: t0 its FCB at sector 13
+Existed dir: aa its FCB at sector 55
+Err contruct the same dir 'aa' in cur dir. Break
+Existed dir: t0 its FCB at sector 13
+Existed dir: bb its FCB at sector 66
+Err contruct the same dir 'bb' in cur dir. Break
+Existed dir: t0 its FCB at sector 13
+Existed dir: cc its FCB at sector 77
+Err contruct the same dir 'cc' in cur dir. Break
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f1: ------------
+
+Copy file num_100.txt to nachOS FS /t0/bb/f1: 
+
+Err contruct the same File 'f1' in cur dir. Break
+Copy: couldn't create output file /t0/bb/f1
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f2: ------------
+
+Err contruct the same File 'f2' in cur dir. Break
+Copy: couldn't create output file /t0/bb/f2
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f3: ------------
+
+Err contruct the same File 'f3' in cur dir. Break
+Copy: couldn't create output file /t0/bb/f3
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f4: ------------
+
+Err contruct the same File 'f4' in cur dir. Break
+Copy: couldn't create output file /t0/bb/f4
+
+------------ List root dir /: ------------ 
+
+[D] t0
+[D] t1
+[D] t2
+
+------------ List dir /t0: ------------ 
+
+[F] f1
+[D] aa
+[D] bb
+[D] cc
+
+------------ Recursive List root dir /: ------------ 
+
+[D] t0
+  [F] f1
+  [D] aa
+  [D] bb
+    [F] f1
+    [F] f2
+    [F] f3
+    [F] f4
+  [D] cc
+[D] t1
+[D] t2
+
+------------ Recursive Remove /t0:  --------------
+
+[F] f1
+[D] aa
+[D] bb
+[D] cc
+Current in : t0
+entry 1 is Dir. name aa, sector 55
+Current in : aa
+entry 2 is Dir. name bb, sector 66
+Current in : bb
+
+------------ After Recursive Remove /t0: --------------
+
+The root dir woule be:
+[D] t0
+  [F] f1
+  [D] aa
+  [D] bb
+    [F] f1
+    [F] f2
+    [F] f3
+    [F] f4
+  [D] cc
+[D] t1
+[D] t2
+=========== Testing FS_bonusIII.sh... ===========
+
+
+----------- Formatting disk... ------------
+
+Total Num of Sectors: 512000
+Need FreeMap Size: 64000
+Need root Dir Size 1280
+Formatting FS: allocating freemap dataSectors... 
+Formatting FS: allocating 'root directory' dataSectors... 
+
+----------- Mkdir /t0------------
+
+
+----------- Mkdir /t1 ------------
+
+
+----------- Mkdir /t2 ------------
+
+
+----------- Recursive List  to check root dir ------------
+
+
+[D] t0 (Empty directory)
+[D] t1 (Empty directory)
+[D] t2 (Empty directory)
+
+----------- Test copy file ------------
+
+\------------ Copy file num_100.txt to nachOS FS /t0/f1: ------------
+
+Copy file num_100.txt to nachOS FS /t0/f1: 
+
+
+----------- Mkdir /t0/aa ------------
+
+Existed dir: t0 its FCB at sector 529
+
+----------- Mkdir /t0/bb ------------
+
+Existed dir: t0 its FCB at sector 529
+
+----------- Mkdir /t0/cc ------------
+
+Existed dir: t0 its FCB at sector 529
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f1: ------------
+
+Copy file num_100.txt to nachOS FS /t0/bb/f1: 
+
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f2: ------------
+
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f3: ------------
+
+
+------------ Copy file num_100.txt to nachOS FS /t0/bb/f4: ------------
+
+
+------------ Recursive List root dir /: ------------ 
+
+
+[D] t0
+  [F] f1
+  [D] aa  (Empty directory)
+  [D] bb
+    [F] f1
+    [F] f2
+    [F] f3
+    [F] f4
+  [D] cc  (Empty directory)
+[D] t1 (Empty directory)
+[D] t2 (Empty directory)
+
+------------ Recursive Remove /t0:  --------------
+
+[F] f1
+[D] aa
+[D] bb
+[D] cc
+Current in : t0
+entry 0 is a File. name f1, sector 562
+entry 1 is Dir. name aa, sector 571
+Current in : aa
+This directory is empty.
+entry 2 is Dir. name bb, sector 582
+Current in : bb
+entry 0 is a File. name f1, sector 604
+entry 1 is a File. name f2, sector 613
+entry 2 is a File. name f3, sector 622
+entry 3 is a File. name f4, sector 631
+entry 3 is Dir. name cc, sector 593
+Current in : cc
+This directory is empty.
+The directory is empty
+
+------------ After Recursive Remove /t0: --------------
+
+The root dir woule be:
+
+[D] t1 (Empty directory)
+[D] t2 (Empty directory)
